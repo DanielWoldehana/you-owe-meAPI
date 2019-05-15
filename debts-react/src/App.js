@@ -16,6 +16,11 @@ class App extends Component {
     };
   }
 
+  newDebtHandler = newDebt => {
+    console.log(newDebt);
+    this.setState({ allDebts: newDebt });
+  };
+
   deleteDebtHandler = debtIndex => {
     const debts = this.state.allDebts.slice();
     debts.splice(debtIndex, 1);
@@ -38,7 +43,11 @@ class App extends Component {
             exact
             path="/"
             render={props => (
-              <AllDebts {...this.state} delete={this.deleteDebtHandler} />
+              <AllDebts
+                {...this.state}
+                delete={() => this.deleteDebtHandler}
+                addDebt={this.newDebtHandler}
+              />
             )}
           />
           <Route exact path="/create" render={props => <NewDebt />} />
