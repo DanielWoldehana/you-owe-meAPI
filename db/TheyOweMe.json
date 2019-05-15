@@ -23,7 +23,7 @@
   },
   {
     "name": "Joey Tribbiani",
-    "moneyOwed": 200,
+    "moneyOwed": 210,
     "reason": "I got him his first audition for Dr.Ramoray",
     "dueDate": "10/13/2012",
     "PhoneNumber": "230-456-8465",
@@ -34,7 +34,7 @@
   },
   {
     "name": "Steve Jobs",
-    "moneyOwed": 9000000000,
+    "moneyOwed": 9000000,
     "reason": "I shared an apple with him and then it all came together for him.",
     "dueDate": "9/13/2005",
     "PhoneNumber": "230-456-8465",
