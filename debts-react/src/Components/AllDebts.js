@@ -20,7 +20,6 @@ class AllDebts extends Component {
     });
     return (
       <div>
-        <h1 className="debtTitle">You Better Have My Money List!!💰</h1>
         <div className="debtContainer">{showDebts} </div>
       </div>
     );
