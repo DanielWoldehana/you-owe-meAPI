@@ -42,5 +42,16 @@
     "picture": "https://i0.wp.com/thinksaveretire.com/wp-content/uploads/2015/10/SteveJobsCloseUp.jpeg?fit=800%2C416&ssl=1",
     "interestRate": "20%/month",
     "paid": false
+  },
+  {
+    "name": "Joeyyyyyyyyyyy Tribbiani",
+    "moneyOwed": 210,
+    "reason": "I got him his first audition for Dr.Ramoray",
+    "dueDate": "10/13/2012",
+    "PhoneNumber": "230-456-8465",
+    "email": "iLoveFood@andLadies4Ever.com",
+    "picture": "https://professionalmorondotcom.files.wordpress.com/2018/02/joey-tribbiani.jpg?w=703&h=451",
+    "interestRate": "1%/month",
+    "paid": false
   }
 ]
