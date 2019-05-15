@@ -28,7 +28,8 @@ class newDebt extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    const newDebtInput = this.state;
+    console.log(newDebtInput);
 
     axios
       .post(
