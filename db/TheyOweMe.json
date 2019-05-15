@@ -5,14 +5,20 @@
     "reason": "I beat him in a game of Black Jack",
     "dueDate": "10/12/2019",
     "picture": "https://3er1viui9wo30pkxh1v2nh4w-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/gates_print.jpg",
-    "interestRate": "15%/month"
+    "PhoneNumber": "230-456-8465",
+    "email": "allAboutMoney@moneyBank.com",
+    "interestRate": "15%/month",
+    "paid": false
   },
   {
     "name": "Tony Stark",
     "moneyOwed": 90000,
     "reason": "lent him $90,000 to build hiss first suit",
     "dueDate": "11/1/2008",
+    "PhoneNumber": "230-456-8465",
+    "email": "betterThenOnePunchMan@hero4Ever.com",
     "picture": "http://www.andymangels.com/images/IronMan_10.jpg",
-    "interestRate": "10%/month"
+    "interestRate": "10%/month",
+    "paid": false
   }
 ]

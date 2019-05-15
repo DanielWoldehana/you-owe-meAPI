@@ -4,6 +4,7 @@ import axios from "axios";
 import "./App.css";
 import AllDebts from "./Components/AllDebts";
 import NavBar from "./Components/NavBar";
+import NewDebt from "./Components/newDebt";
 
 let url = "https://you-owe-me-api.herokuapp.com/api/Debts";
 
@@ -14,6 +15,12 @@ class App extends Component {
       allDebts: []
     };
   }
+
+  deleteDebtHandler = debtIndex => {
+    const debts = this.state.allDebts.slice();
+    debts.splice(debtIndex, 1);
+    this.setState({ allDebts: debts });
+  };
 
   componentDidMount() {
     console.log("DidMount");
@@ -30,8 +37,11 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={props => <AllDebts {...this.state} />}
+            render={props => (
+              <AllDebts {...this.state} delete={this.deleteDebtHandler} />
+            )}
           />
+          <Route exact path="/create" render={props => <NewDebt />} />
         </Switch>
       </div>
     );

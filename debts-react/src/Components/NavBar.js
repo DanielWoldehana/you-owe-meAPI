@@ -20,14 +20,17 @@ class NavBar extends Component {
     return (
       <nav>
         <div className="myLogo">Betta-Ha-Ma-Money</div>
+        <input className="myInput" type="text" placeholder="enter name..." />
+        <input className="mySubmit" type="submit" value="find" />
+
         <ul className={`myUl ${this.state.navShow ? "showNav" : ""}`}>
           <Link to="/">
             <li>HOME</li>
           </Link>
-          <Link to="/search">
+          <Link to="/create">
             <li>New Debt</li>
           </Link>
-          {/* <input type="text" placeholder="search ..." /> */}
+          <li />
         </ul>
         <div className="toggleNav" onClick={e => this.toggleNavBar(e)}>
           <div className="line1" />

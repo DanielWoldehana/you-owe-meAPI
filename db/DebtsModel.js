@@ -7,7 +7,10 @@ const DebtsOwed = new Schema({
   reason: String,
   dueDate: String,
   picture: String,
-  interestRate: String
+  phoneNumber: String,
+  email: String,
+  interestRate: String,
+  paid: Boolean
 });
 
 module.exports = mongoose.model("Debt", DebtsOwed);

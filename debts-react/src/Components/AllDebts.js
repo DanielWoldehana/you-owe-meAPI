@@ -4,7 +4,7 @@ import "./allDebts.css";
 class AllDebts extends Component {
   render() {
     console.log(this.props.allDebts);
-    let showDebts = this.props.allDebts.map(debt => {
+    let showDebts = this.props.allDebts.map((debt, index) => {
       return (
         <div className="debtCard">
           <img src={debt.picture} alt={debt.name} />
@@ -14,7 +14,7 @@ class AllDebts extends Component {
           <p>{debt.reason}</p>
           <p>{debt.interestRate}</p>
           <p>{debt.dueDate}</p>
-          <button>Contact</button>
+          <button onClick={() => this.props.delete}>Paid Off</button>
         </div>
       );
     });
