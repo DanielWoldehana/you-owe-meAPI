@@ -7,6 +7,10 @@ img {
   max-width: 180px;
 }
 
+hr {
+  height: 3px;
+}
+
 .debtContainer {
   margin-top: 5%;
   display: flex;
@@ -15,10 +19,11 @@ img {
 
 .debtCard {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  max-width: 320px;
   margin: auto;
   text-align: center;
   font-family: arial;
+  background-color: rgba(152, 180, 152, 0.678);
 }
 
 button {
