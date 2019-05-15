@@ -1,0 +1,35 @@
+.formContainer2 {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(183, 202, 183, 0.493);
+}
+
+.formContainer2 input[type="text"] {
+  margin: 5px 0;
+  height: 30px;
+  border-radius: 2px;
+}
+
+.formContainer2 input[type="submit"] {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.formContainer2 input[type="submit"]:hover {
+  opacity: 0.5;
+}

@@ -19,7 +19,9 @@ class NavBar extends Component {
   render() {
     return (
       <nav>
-        <div className="myLogo">Betta-Ha-Ma-Money</div>
+        <Link to="/">
+          <div className="myLogo">Betta-Ha-Ma-Money</div>
+        </Link>
         <input className="myInput" type="text" placeholder="enter name..." />
         <input className="mySubmit" type="submit" value="find" />
 

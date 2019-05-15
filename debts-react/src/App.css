@@ -4,33 +4,12 @@ body {
   box-sizing: border-box;
   font-family: arial;
   text-align: center;
+  background: url("./images/UNADJUSTEDNONRAW_thumb_a.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
   color: white;
   text-decoration: none;
-}
-
-.myNav {
-  display: flex;
-  justify-content: space-between;
-  background: url(./images/cash2.jpg);
-  background-size: cover;
-  background-blend-mode: lighten;
-  /* background-color: #5a5959; */
-  color: white;
-  height: 200px;
-}
-.navH1 {
-  background-color: #444444;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.navH {
-  margin-left: 18px;
-}
-
-.navS {
-  margin-right: 18px;
 }
