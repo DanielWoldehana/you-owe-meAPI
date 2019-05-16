@@ -22,6 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log("DidMount");
+    console.log(this.props);
     axios.get(url).then(res => {
       let debtsDB = res.data;
       this.setState({ allDebts: debtsDB });
@@ -54,7 +55,7 @@ class App extends Component {
     console.log(newDebt);
 
     axios
-      .post("https://you-owe-me-api.herokuapp.com/api/Debts", newDebt)
+      .post("https://you-owe-me-api.herokuapp.com/api/Debts/newDebt", newDebt)
       .then(res => {
         console.log(res);
       })
@@ -115,6 +116,7 @@ class App extends Component {
             path="/"
             render={props => (
               <AllDebts
+                {...props}
                 allDebts={this.state.allDebts}
                 editDebt={this.editDebtHandler}
                 delete={this.deleteDebtHandler}
@@ -126,6 +128,7 @@ class App extends Component {
             path="/create"
             render={props => (
               <NewDebt
+                {...props}
                 {...this.state}
                 addDebt={this.newDebtHandler}
                 showAll={this.showAllDebts}

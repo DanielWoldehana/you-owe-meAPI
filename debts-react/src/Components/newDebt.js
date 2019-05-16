@@ -29,6 +29,7 @@ class newDebt extends Component {
     console.log(this.props);
     // this.props.setRedirect();
     this.props.addDebt(this.state);
+    this.props.history.push("/");
   };
 
   render() {
