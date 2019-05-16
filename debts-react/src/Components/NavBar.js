@@ -27,10 +27,13 @@ class NavBar extends Component {
     });
   };
   render() {
+    console.log(this.props.showAllDebts);
     return (
       <nav>
         <Link to="/">
-          <div className="myLogo">Betta-Ha-Ma-Money</div>
+          <div onClick={this.props.showAllDebts} className="myLogo">
+            Betta-Ha-Ma-Money
+          </div>
         </Link>
         <form onSubmit={this.handleSubmit}>
           <input

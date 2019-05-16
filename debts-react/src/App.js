@@ -93,13 +93,26 @@ class App extends Component {
     console.log(this.state.alldebts);
     return (
       <div>
-        <NavBar alldebts={this.state.allDebts} search={this.handleSearch} />
+        <Route
+          path="/"
+          render={props => (
+            <NavBar
+              alldebts={this.state.allDebts}
+              search={this.handleSearch}
+              showAllDebts={this.showAllDebts}
+            />
+          )}
+        />
         <Switch>
           <Route
             exact
             path="/"
             render={props => (
-              <AllDebts {...this.state} delete={this.deleteDebtHandler} />
+              <AllDebts
+                name={"Danny"}
+                {...this.state}
+                delete={this.deleteDebtHandler}
+              />
             )}
           />
           <Route
