@@ -13,7 +13,7 @@ class AllDebts extends Component {
           <img src={debt.picture} alt={debt.name} />
           <Link to="/update">
             <img
-              // onClick={() => this.props.editDebt(debtInfo)}
+              onClick={() => this.props.editDebt(debt.name)}
               className="editIcon"
               src="https://image.flaticon.com/icons/svg/1160/1160758.svg"
               alt="edit"

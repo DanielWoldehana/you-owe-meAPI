@@ -27,7 +27,7 @@ class NavBar extends Component {
     });
   };
   render() {
-    console.log(this.props.showAllDebts);
+    // console.log(this.props.showAllDebts);
     return (
       <nav>
         <Link to="/">

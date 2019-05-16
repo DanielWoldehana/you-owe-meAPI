@@ -6,16 +6,17 @@ import "./App.css";
 import AllDebts from "./Components/AllDebts";
 import NavBar from "./Components/NavBar";
 import NewDebt from "./Components/newDebt";
-// import EditDebt from "./Components/EditDebt";
+import EditDebt from "./Components/EditDebt";
 
 let url = "http://localhost:3001/api/Debts";
-
+const editToThis = "";
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       allDebts: [],
-      redirect: false
+      redirect: false,
+      updateThis: ""
     };
   }
 
@@ -68,20 +69,29 @@ class App extends Component {
         console.error(err);
       });
   };
-  editDebtHandler = updatedDebt => {
-    console.log(updatedDebt);
-    console.log("props passed");
-    // axios
-    //   .put(`http://localhost:3001/api/Debts/newDebt/update/${updatedDebt.name}`)
-    //   .then(res => {
-    //     console.log(res);
-    //     const updated = res.data;
-    //     this.setState({ allDebts: updated });
-    //     return <Redirect to="/" />;
-    //   })
-    //   .catch(err => {
-    //     console.error(err);
-    //   });
+  myEditedState = editedState => {
+    console.log(this.state.updateThis);
+    console.log(editedState);
+    axios
+      .put(
+        `http://localhost:3001/api/Debts/update/${this.state.updateThis}`,
+        editedState
+      )
+      .then(res => {
+        console.log(res);
+        const updated = res.data;
+        this.setState({ allDebts: updated });
+        // return <Redirect to="/" />;
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
+  editDebtHandler = updateThisName => {
+    // console.log("editDebt handler");
+    console.log(updateThisName);
+    this.setState({ updateThis: updateThisName });
   };
 
   deleteDebtHandler = id => {
@@ -90,7 +100,6 @@ class App extends Component {
     });
   };
   render() {
-    console.log(this.state.alldebts);
     return (
       <div>
         <Route
@@ -110,7 +119,8 @@ class App extends Component {
             render={props => (
               <AllDebts
                 name={"Danny"}
-                {...this.state}
+                allDebts={this.state.allDebts}
+                editDebt={this.editDebtHandler}
                 delete={this.deleteDebtHandler}
               />
             )}
@@ -126,13 +136,17 @@ class App extends Component {
               />
             )}
           />
-          {/* <Route
+          <Route
             exact
             path="/update"
             render={props => (
-              <EditDebt {...this.state} editDebt={this.editDebtHandler} />
+              <EditDebt
+                myEditedState={this.myEditedState}
+                {...this.state}
+                editDebt={this.editDebtHandler}
+              />
             )}
-          /> */}
+          />
         </Switch>
       </div>
     );
