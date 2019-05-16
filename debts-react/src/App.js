@@ -118,7 +118,6 @@ class App extends Component {
             path="/"
             render={props => (
               <AllDebts
-                name={"Danny"}
                 allDebts={this.state.allDebts}
                 editDebt={this.editDebtHandler}
                 delete={this.deleteDebtHandler}
