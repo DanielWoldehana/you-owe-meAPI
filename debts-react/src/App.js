@@ -36,6 +36,15 @@ class App extends Component {
   //   }
   // };
 
+  handleSearch = name => {
+    if (name === "") {
+      return <Redirect to="/" />;
+    }
+    axios.get(`http://localhost:3001/api/Debts/name/${name}`).then(res => {
+      console.log(res.data[0]);
+      this.setState({ allDebts: res.data });
+    });
+  };
   newDebtHandler = newDebt => {
     console.log(newDebt);
     axios
@@ -74,7 +83,7 @@ class App extends Component {
     console.log(this.state.alldebts);
     return (
       <div>
-        <NavBar />
+        <NavBar alldebts={this.state.allDebts} search={this.handleSearch} />
         <Switch>
           <Route
             exact

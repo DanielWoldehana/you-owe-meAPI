@@ -6,25 +6,42 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: "",
       navShow: false
     };
   }
 
-  toggleNavBar = e => {
-    e.preventDefault();
-    this.setState({
-      navShow: !this.state.navShow
-    });
+  handleChange = e => {
+    this.setState({ name: e.target.value });
+    console.log(this.state.name);
   };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.search(this.state.name);
+  };
+  // toggleNavBar = e => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     navShow: !this.state.navShow
+  //   });
+  // };
   render() {
     return (
       <nav>
         <Link to="/">
           <div className="myLogo">Betta-Ha-Ma-Money</div>
         </Link>
-        <input className="myInput" type="text" placeholder="enter name..." />
-        <input className="mySubmit" type="submit" value="find" />
-
+        <form onSubmit={this.handleSubmit}>
+          <input
+            onChange={this.handleChange}
+            className="myInput"
+            type="text"
+            placeholder="enter name..."
+            name="name"
+          />
+          <input className="mySubmit" type="submit" value="find" />
+        </form>
         <ul className={`myUl ${this.state.navShow ? "showNav" : ""}`}>
           <Link to="/">
             <li>HOME</li>
