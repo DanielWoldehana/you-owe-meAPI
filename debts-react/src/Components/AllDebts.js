@@ -23,13 +23,27 @@ class AllDebts extends Component {
           <h1>{debt.name}</h1>
 
           <p>
-            Owes Me: $<span className="debtOwed">{debt.moneyOwed}</span>
+            <span className="cardProperties">Owes Me</span>: $
+            <span className="debtOwed">{debt.moneyOwed}</span>
           </p>
-          <p>Reason for debt: {debt.reason}</p>
-          <p>Interest Rate: {debt.interestRate}</p>
-          <p>Due Date: {debt.dueDate}</p>
-          <p>Phone Number: {debt.phoneNumber}</p>
-          <p>Email: {debt.email}</p>
+          <p>
+            <span className="cardProperties">Reason for debt</span>:{" "}
+            {debt.reason}
+          </p>
+          <p>
+            <span className="cardProperties">Interest Rate</span>:{" "}
+            {debt.interestRate}
+          </p>
+          <p>
+            <span className="cardProperties">Due Date</span>: {debt.dueDate}
+          </p>
+          <p>
+            <span className="cardProperties">Phone Number</span>:{" "}
+            {debt.phoneNumber}
+          </p>
+          <p>
+            <span className="cardProperties">Email</span>: {debt.email}
+          </p>
 
           <button onClick={() => this.props.delete(id)}>Delete</button>
         </div>

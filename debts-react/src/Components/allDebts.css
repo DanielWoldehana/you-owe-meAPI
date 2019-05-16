@@ -49,6 +49,10 @@ hr {
   background-color: rgba(183, 202, 183, 0.493);
 }
 
+.cardProperties {
+  color: rgb(192, 142, 49);
+}
+
 .debtCard p {
   padding: 10px;
   overflow: hidden;

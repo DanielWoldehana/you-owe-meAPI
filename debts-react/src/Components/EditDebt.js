@@ -4,15 +4,16 @@ import "./newdebt.css";
 class EditDebt extends Component {
   constructor(props) {
     super(props);
+
+    // filter through all props.allDebts
+    // match by name
+    // set initial state for this one person by name
+    let onePerson = props.allDebts.filter(person => {
+      return person.name === props.updateThis;
+    });
+
     this.state = {
-      name: ""
-      //   moneyOwed: "",
-      //   reason: "",
-      //   dueDate: "",
-      //   picture: "",
-      //   phoneNumber: "",
-      //   email: "",
-      //   interestRate: ""
+      ...onePerson[0]
     };
   }
 
@@ -23,7 +24,6 @@ class EditDebt extends Component {
   };
 
   handleSubmit = evt => {
-    evt.preventDefault();
     this.props.myEditedState(this.state);
   };
 
@@ -39,7 +39,7 @@ class EditDebt extends Component {
             value={this.state.name}
             onChange={this.handleChange}
           />
-          {/* MoneyOwed
+          MoneyOwed
           <input
             type="text"
             placeholder="Amount of Money.."
@@ -52,7 +52,7 @@ class EditDebt extends Component {
             type="text"
             placeholder="Reason.."
             name="reason"
-            value={this.state.value}
+            value={this.state.reason}
             onChange={this.handleChange}
           />
           DueDate
@@ -94,7 +94,7 @@ class EditDebt extends Component {
             name="interestRate"
             value={this.state.interestRate}
             onChange={this.handleChange}
-          /> */}
+          />
           <input className="submitNewDebt" type="submit" value="Submit" />
         </form>
       </div>

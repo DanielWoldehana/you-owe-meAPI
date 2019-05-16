@@ -1,12 +1,15 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "../setupTests";
 
 import AllDebts from "./AllDebts";
 
 describe("All Debts component", () => {
-  it("should render as expected", () => {
-    const component = shallow(<AllDebts name={"Danny"} />);
+  let component;
+  beforeEach(() => {
+    component = mount(<AllDebts name={"Danny"} />);
+  });
 
-    expect(component.contains("Danny")).toBe(true);
+  it("prop name should render Danny", () => {
+    expect(component.html()).to.equal("<h1>Danny</h1>");
   });
 });
