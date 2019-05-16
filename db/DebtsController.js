@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   DebtsModel.find({})
     .then(debt => {
       res.json(debt);
-      console.log(debt);
+      // console.log(debt);
     })
     .catch(err => {
       console.error(err);
@@ -39,6 +39,7 @@ router.put("/update/:name", (req, res) => {
   DebtsModel.update({ name: req.params.name }, req.body)
     .then(debt => {
       res.json(debt);
+      console.log(debt);
     })
     .catch(err => {
       console.error(err);
@@ -49,7 +50,7 @@ router.delete("/delete/:id", (req, res) => {
   DebtsModel.deleteOne({ _id: req.params.id })
     .then(debt => {
       res.json(debt);
-      console.log(debt);
+      // console.log(debt);
     })
     .catch(err => {
       console.error(err);
