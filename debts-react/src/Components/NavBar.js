@@ -20,12 +20,12 @@ class NavBar extends Component {
     e.preventDefault();
     this.props.search(this.state.name);
   };
-  // toggleNavBar = e => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     navShow: !this.state.navShow
-  //   });
-  // };
+  toggleNavBar = e => {
+    e.preventDefault();
+    this.setState({
+      navShow: !this.state.navShow
+    });
+  };
   render() {
     return (
       <nav>

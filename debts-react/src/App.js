@@ -27,6 +27,13 @@ class App extends Component {
     });
   }
 
+  showAllDebts = () => {
+    axios.get(url).then(res => {
+      let debtsDB = res.data;
+      this.setState({ allDebts: debtsDB });
+    });
+  };
+
   // setRedirectHandler = () => {
   //   this.setState({
   //     redirect: true
@@ -37,16 +44,21 @@ class App extends Component {
   // };
 
   handleSearch = name => {
-    if (name === "") {
-      return <Redirect to="/" />;
+    if (name) {
+      axios.get(`http://localhost:3001/api/Debts/name/${name}`).then(res => {
+        console.log(res.data[0]);
+        this.setState({ allDebts: res.data });
+      });
+    } else {
+      axios.get(url).then(res => {
+        let debtsDB = res.data;
+        this.setState({ allDebts: debtsDB });
+      });
     }
-    axios.get(`http://localhost:3001/api/Debts/name/${name}`).then(res => {
-      console.log(res.data[0]);
-      this.setState({ allDebts: res.data });
-    });
   };
   newDebtHandler = newDebt => {
     console.log(newDebt);
+
     axios
       .post("http://localhost:3001/api/Debts/newDebt", newDebt)
       .then(res => {
@@ -56,7 +68,6 @@ class App extends Component {
         console.error(err);
       });
   };
-
   editDebtHandler = updatedDebt => {
     console.log(updatedDebt);
     console.log("props passed");
@@ -78,7 +89,6 @@ class App extends Component {
       console.log(res.data);
     });
   };
-
   render() {
     console.log(this.state.alldebts);
     return (
@@ -96,7 +106,11 @@ class App extends Component {
             exact
             path="/create"
             render={props => (
-              <NewDebt {...this.state} addDebt={this.newDebtHandler} />
+              <NewDebt
+                {...this.state}
+                addDebt={this.newDebtHandler}
+                showAll={this.showAllDebts}
+              />
             )}
           />
           {/* <Route
