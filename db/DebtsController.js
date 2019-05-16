@@ -49,6 +49,7 @@ router.delete("/delete/:id", (req, res) => {
   DebtsModel.deleteOne({ _id: req.params.id })
     .then(debt => {
       res.json(debt);
+      console.log(debt);
     })
     .catch(err => {
       console.error(err);

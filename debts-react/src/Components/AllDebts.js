@@ -31,7 +31,7 @@ class AllDebts extends Component {
           <p>Phone Number: {debt.phoneNumber}</p>
           <p>Email: {debt.email}</p>
 
-          <button onClick={() => this.props.delete(id)}>Paid Off</button>
+          <button onClick={() => this.props.delete(id)}>Delete</button>
         </div>
       );
     });

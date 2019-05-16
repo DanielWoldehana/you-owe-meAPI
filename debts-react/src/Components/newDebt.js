@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./newdebt.css";
-import axios from "axios";
+// import axios from "axios";
 
 // const newDebtObject = [];
 
@@ -27,7 +27,7 @@ class newDebt extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.props);
-    this.props.setRedirect();
+    // this.props.setRedirect();
     this.props.addDebt(this.state);
   };
 

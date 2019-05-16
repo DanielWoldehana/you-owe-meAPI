@@ -6,7 +6,7 @@ import "./App.css";
 import AllDebts from "./Components/AllDebts";
 import NavBar from "./Components/NavBar";
 import NewDebt from "./Components/newDebt";
-import EditDebt from "./Components/EditDebt";
+// import EditDebt from "./Components/EditDebt";
 
 let url = "http://localhost:3001/api/Debts";
 
@@ -27,14 +27,14 @@ class App extends Component {
     });
   }
 
-  setRedirectHandler = () => {
-    this.setState({
-      redirect: true
-    });
-    if (this.state.redirect) {
-      return <Redirect to="/" />;
-    }
-  };
+  // setRedirectHandler = () => {
+  //   this.setState({
+  //     redirect: true
+  //   });
+  //   if (this.state.redirect) {
+  //     return <Redirect to="/" />;
+  //   }
+  // };
 
   newDebtHandler = newDebt => {
     console.log(newDebt);
@@ -65,15 +65,13 @@ class App extends Component {
   };
 
   deleteDebtHandler = id => {
-    id.preventDefault();
     axios.delete(`http://localhost:3001/api/Debts/delete/${id}`).then(res => {
-      const remainDebts = res.data;
-      this.setState({ allDebts: remainDebts });
-      return <Redirect to="/" />;
+      console.log(res.data);
     });
   };
 
   render() {
+    console.log(this.state.alldebts);
     return (
       <div>
         <NavBar />
@@ -82,31 +80,23 @@ class App extends Component {
             exact
             path="/"
             render={props => (
-              <AllDebts
-                {...this.state}
-                delete={this.deleteDebtHandler}
-                editDebt={this.editDebtHandler}
-              />
+              <AllDebts {...this.state} delete={this.deleteDebtHandler} />
             )}
           />
           <Route
             exact
             path="/create"
             render={props => (
-              <NewDebt
-                {...this.state}
-                addDebt={this.newDebtHandler}
-                setRedirect={this.setRedirectHandler}
-              />
+              <NewDebt {...this.state} addDebt={this.newDebtHandler} />
             )}
           />
-          <Route
+          {/* <Route
             exact
             path="/update"
             render={props => (
               <EditDebt {...this.state} editDebt={this.editDebtHandler} />
             )}
-          />
+          /> */}
         </Switch>
       </div>
     );
