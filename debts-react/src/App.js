@@ -8,7 +8,7 @@ import NavBar from "./Components/NavBar";
 import NewDebt from "./Components/newDebt";
 import EditDebt from "./Components/EditDebt";
 
-let url = "http://localhost:3001/api/Debts";
+let url = "https://you-owe-me-api.herokuapp.com/api/Debts";
 const editToThis = "";
 class App extends Component {
   constructor(props) {
@@ -35,21 +35,14 @@ class App extends Component {
     });
   };
 
-  // setRedirectHandler = () => {
-  //   this.setState({
-  //     redirect: true
-  //   });
-  //   if (this.state.redirect) {
-  //     return <Redirect to="/" />;
-  //   }
-  // };
-
   handleSearch = name => {
     if (name) {
-      axios.get(`http://localhost:3001/api/Debts/name/${name}`).then(res => {
-        console.log(res.data[0]);
-        this.setState({ allDebts: res.data });
-      });
+      axios
+        .get(`https://you-owe-me-api.herokuapp.com/api/Debts/name/${name}`)
+        .then(res => {
+          console.log(res.data[0]);
+          this.setState({ allDebts: res.data });
+        });
     } else {
       axios.get(url).then(res => {
         let debtsDB = res.data;
@@ -61,7 +54,7 @@ class App extends Component {
     console.log(newDebt);
 
     axios
-      .post("http://localhost:3001/api/Debts/newDebt", newDebt)
+      .post("https://you-owe-me-api.herokuapp.com/api/Debts", newDebt)
       .then(res => {
         console.log(res);
       })
@@ -74,7 +67,9 @@ class App extends Component {
     console.log(editedState);
     axios
       .put(
-        `http://localhost:3001/api/Debts/update/${this.state.updateThis}`,
+        `https://you-owe-me-api.herokuapp.com/api/Debts/update/${
+          this.state.updateThis
+        }`,
         editedState
       )
       .then(res => {
@@ -95,9 +90,11 @@ class App extends Component {
   };
 
   deleteDebtHandler = id => {
-    axios.delete(`http://localhost:3001/api/Debts/delete/${id}`).then(res => {
-      console.log(res.data);
-    });
+    axios
+      .delete(`https://you-owe-me-api.herokuapp.com/api/Debts/delete/${id}`)
+      .then(res => {
+        console.log(res.data);
+      });
   };
   render() {
     return (

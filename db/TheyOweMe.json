@@ -18,8 +18,7 @@
     "PhoneNumber": "230-456-8465",
     "email": "OnePunchMan@hero4Ever.com",
     "picture": "http://www.andymangels.com/images/IronMan_10.jpg",
-    "interestRate": "10%/month",
-    "paid": false
+    "interestRate": "10%/month"
   },
   {
     "name": "Joey Tribbiani",
@@ -29,8 +28,7 @@
     "PhoneNumber": "230-456-8465",
     "email": "iLoveFood@andLadies4Ever.com",
     "picture": "https://professionalmorondotcom.files.wordpress.com/2018/02/joey-tribbiani.jpg?w=703&h=451",
-    "interestRate": "1%/month",
-    "paid": false
+    "interestRate": "1%/month"
   },
   {
     "name": "Steve Jobs",
@@ -40,7 +38,16 @@
     "PhoneNumber": "230-456-8465",
     "email": "LoveBreathApple@AndriodEnemy.com",
     "picture": "https://i0.wp.com/thinksaveretire.com/wp-content/uploads/2015/10/SteveJobsCloseUp.jpeg?fit=800%2C416&ssl=1",
-    "interestRate": "20%/month",
-    "paid": false
+    "interestRate": "20%/month"
+  },
+  {
+    "name": "Elon Musk",
+    "moneyOwed": 10000000,
+    "reason": "I Lent him a pack of Gum once...I think",
+    "dueDate": "10/03/2020",
+    "PhoneNumber": "666-356-8365",
+    "email": "NameUrKidsTesla@LoveS3X.com",
+    "picture": "https://timedotcom.files.wordpress.com/2015/10/gettyimages-489769706.jpg",
+    "interestRate": "25%/month"
   }
 ]

@@ -51,7 +51,6 @@ class AllDebts extends Component {
     });
     return (
       <div>
-        <h1>{this.props.name}</h1>
         <div className="debtContainer">{showDebts} </div>
       </div>
     );
