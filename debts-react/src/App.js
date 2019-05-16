@@ -58,6 +58,7 @@ class App extends Component {
       .post("https://you-owe-me-api.herokuapp.com/api/Debts/newDebt", newDebt)
       .then(res => {
         console.log(res);
+        window.location.href = "/";
       })
       .catch(err => {
         console.error(err);
@@ -77,7 +78,7 @@ class App extends Component {
         console.log(res);
         const updated = res.data;
         this.setState({ allDebts: updated });
-        // return <Redirect to="/" />;
+        // window.location.href = "/";
       })
       .catch(err => {
         console.error(err);
@@ -95,6 +96,8 @@ class App extends Component {
       .delete(`https://you-owe-me-api.herokuapp.com/api/Debts/delete/${id}`)
       .then(res => {
         console.log(res.data);
+        console.log(this.state.history);
+        window.location.href = "/";
       });
   };
   render() {
@@ -120,6 +123,7 @@ class App extends Component {
                 allDebts={this.state.allDebts}
                 editDebt={this.editDebtHandler}
                 delete={this.deleteDebtHandler}
+                showAll={this.showAllDebts}
               />
             )}
           />

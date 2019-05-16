@@ -25,6 +25,7 @@ class EditDebt extends Component {
 
   handleSubmit = evt => {
     this.props.myEditedState(this.state);
+    window.location.href = "/";
   };
 
   render() {
