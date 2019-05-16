@@ -9,8 +9,7 @@ const DebtsOwed = new Schema({
   picture: String,
   phoneNumber: String,
   email: String,
-  interestRate: String,
-  paid: Boolean
+  interestRate: String
 });
 
 module.exports = mongoose.model("Debt", DebtsOwed);

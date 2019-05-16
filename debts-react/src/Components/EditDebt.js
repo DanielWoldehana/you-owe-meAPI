@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import "./newdebt.css";
-import axios from "axios";
 
-// const newDebtObject = [];
-
-class newDebt extends Component {
+class EditDebt extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,20 +18,24 @@ class newDebt extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-    // console.log(this.state.name);
+    // console.log(e.target.value);
+    // console.log(e.target.name);
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.props);
-    this.props.setRedirect();
-    this.props.addDebt(this.state);
+    console.log(this.props.editDebt.name);
+    this.props.editDebt(this.state.name);
   };
 
   render() {
     return (
       <div className="formContainer1">
-        <form action="" className="formContainer2" onSubmit={this.handleSubmit}>
+        <form
+          action=""
+          className="formContainer2"
+          onSubmit={() => this.handleSubmit}
+        >
           Full Name
           <input
             type="text"
@@ -106,4 +107,4 @@ class newDebt extends Component {
   }
 }
 
-export default newDebt;
+export default EditDebt;

@@ -25,6 +25,7 @@ router.get("/name/:name", (req, res) => {
 });
 
 router.post("/newDebt", (req, res) => {
+  console.log(req.body);
   DebtsModel.create(req.body)
     .then(debt => {
       res.json(debt);
@@ -44,8 +45,8 @@ router.put("/update/:name", (req, res) => {
     });
 });
 
-router.delete("/delete/:name", (req, res) => {
-  DebtsModel.deleteOne({ name: req.params.name })
+router.delete("/delete/:id", (req, res) => {
+  DebtsModel.deleteOne({ _id: req.params.id })
     .then(debt => {
       res.json(debt);
     })

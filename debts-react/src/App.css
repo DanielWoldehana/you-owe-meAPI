@@ -4,12 +4,10 @@ body {
   box-sizing: border-box;
   font-family: arial;
   text-align: center;
-  background: url("./images/UNADJUSTEDNONRAW_thumb_a.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgba(206, 231, 216, 0.664);
 }
 
 a {
-  color: white;
+  color: rgb(236, 148, 75);
   text-decoration: none;
 }
