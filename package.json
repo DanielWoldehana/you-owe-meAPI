@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "heroku run node db/seed.js"
+    "seed": "heroku run node db/seed.js",
+    "push": "git push heroku master"
   },
   "keywords": [],
   "author": "Daniel Woldehana",
