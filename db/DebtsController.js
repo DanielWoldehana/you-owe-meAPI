@@ -40,7 +40,7 @@ router.put("/update/:name", (req, res) => {
     .then(debt => {
       res.json(debt);
       console.log(debt);
-    })
+      res.redirect("/")
     .catch(err => {
       console.error(err);
     });
