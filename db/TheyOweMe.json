@@ -34,7 +34,7 @@
     "name": "Steve Jobs",
     "moneyOwed": 9000000,
     "reason": "I shared an apple with him and then it all came together for him.",
-    "dueDate": "9/13/2005",
+    "dueDate": "In the After Life",
     "PhoneNumber": "230-456-8465",
     "email": "LoveBreathApple@AndriodEnemy.com",
     "picture": "https://i0.wp.com/thinksaveretire.com/wp-content/uploads/2015/10/SteveJobsCloseUp.jpeg?fit=800%2C416&ssl=1",
@@ -49,5 +49,15 @@
     "email": "NameUrKidsTesla@LoveS3X.com",
     "picture": "https://timedotcom.files.wordpress.com/2015/10/gettyimages-489769706.jpg",
     "interestRate": "25%/month"
+  },
+  {
+    "name": "Will Smith",
+    "moneyOwed": 25000,
+    "reason": "I thought him how to solve the Rubik's cube for his role in Pursuit of Happiness",
+    "dueDate": "ASAP",
+    "PhoneNumber": "345-579-3744",
+    "email": "BestActor@BadBoys4Eva.com",
+    "picture": "http://klipd.com/screenshots/2dd7cc09256597aff4f7e8af5399d5dd-1.jpg",
+    "interestRate": "10%/month"
   }
 ]
