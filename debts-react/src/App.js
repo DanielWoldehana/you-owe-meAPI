@@ -79,7 +79,7 @@ class App extends Component {
         console.log(res);
         const updated = res.data;
         this.setState({ allDebts: updated });
-        // window.location.href = "/";
+        this.props.history.push("/allDebts");
       })
       .catch(err => {
         console.error(err);
@@ -144,11 +144,7 @@ class App extends Component {
             exact
             path="/update"
             render={props => (
-              <EditDebt
-                myEditedState={this.myEditedState}
-                {...this.state}
-                editDebt={this.editDebtHandler}
-              />
+              <EditDebt myEditedState={this.myEditedState} {...this.state} />
             )}
           />
         </Switch>
