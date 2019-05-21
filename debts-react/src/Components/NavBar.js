@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import fire from "../config/fire";
 
 class NavBar extends Component {
   constructor(props) {
@@ -26,6 +27,11 @@ class NavBar extends Component {
       navShow: !this.state.navShow
     });
   };
+
+  logout = () => {
+    fire.auth().signOut();
+  };
+
   render() {
     // console.log(this.props.showAllDebts);
     return (
@@ -50,7 +56,7 @@ class NavBar extends Component {
           <Link to="/create">
             <li>New Debt</li>
           </Link>
-          <li />
+          <button onClick={this.logout}>Logout</button>
         </ul>
         <div className="toggleNav" onClick={e => this.toggleNavBar(e)}>
           <div className="line1" />
