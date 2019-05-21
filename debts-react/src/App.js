@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import { Redirect } from "react-router";
+import fire from "./config/fire";
 import axios from "axios";
 import "./App.css";
+import Login from "./components/Login";
 import AllDebts from "./Components/AllDebts";
 import NavBar from "./Components/NavBar";
 import NewDebt from "./Components/newDebt";
@@ -15,11 +17,13 @@ class App extends Component {
     this.state = {
       allDebts: [],
       redirect: false,
-      updateThis: ""
+      updateThis: "",
+      user: {}
     };
   }
 
   componentDidMount() {
+    this.authListener();
     console.log("DidMount");
     console.log(this.props);
     console.log(this.state.allDebts);
@@ -28,6 +32,16 @@ class App extends Component {
       this.setState({ allDebts: debtsDB });
     });
   }
+
+  authListener = () => {
+    fire.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  };
 
   showAllDebts = () => {
     axios.get(url).then(res => {
@@ -114,40 +128,49 @@ class App extends Component {
             />
           )}
         />
-        <Switch>
-          <Route
-            exact
-            path="/allDebts"
-            render={props => (
-              <AllDebts
-                {...props}
-                allDebts={this.state.allDebts}
-                editDebt={this.editDebtHandler}
-                delete={this.deleteDebtHandler}
-                showAll={this.showAllDebts}
+        <div>
+          {this.state.user ? (
+            <Switch>
+              <Route
+                exact
+                path="/allDebts"
+                render={props => (
+                  <AllDebts
+                    {...props}
+                    allDebts={this.state.allDebts}
+                    editDebt={this.editDebtHandler}
+                    delete={this.deleteDebtHandler}
+                    showAll={this.showAllDebts}
+                  />
+                )}
               />
-            )}
-          />
-          <Route
-            exact
-            path="/create"
-            render={props => (
-              <NewDebt
-                {...props}
-                {...this.state}
-                addDebt={this.newDebtHandler}
-                showAll={this.showAllDebts}
+              <Route
+                exact
+                path="/create"
+                render={props => (
+                  <NewDebt
+                    {...props}
+                    {...this.state}
+                    addDebt={this.newDebtHandler}
+                    showAll={this.showAllDebts}
+                  />
+                )}
               />
-            )}
-          />
-          <Route
-            exact
-            path="/update"
-            render={props => (
-              <EditDebt myEditedState={this.myEditedState} {...this.state} />
-            )}
-          />
-        </Switch>
+              <Route
+                exact
+                path="/update"
+                render={props => (
+                  <EditDebt
+                    myEditedState={this.myEditedState}
+                    {...this.state}
+                  />
+                )}
+              />
+            </Switch>
+          ) : (
+            <Login />
+          )}
+        </div>
       </div>
     );
   }

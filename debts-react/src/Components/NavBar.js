@@ -30,7 +30,7 @@ class NavBar extends Component {
     // console.log(this.props.showAllDebts);
     return (
       <nav>
-        <Link to="/">
+        <Link to="/allDebts">
           <div className="myLogo">Betta-Ha-Ma-Money</div>
         </Link>
         <form onSubmit={this.handleSubmit}>
