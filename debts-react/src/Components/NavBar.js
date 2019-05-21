@@ -56,7 +56,7 @@ class NavBar extends Component {
           <Link to="/create">
             <li>New Debt</li>
           </Link>
-          <button onClick={this.logout}>Logout</button>
+          <li onClick={this.logout}>Logout</li>
         </ul>
         <div className="toggleNav" onClick={e => this.toggleNavBar(e)}>
           <div className="line1" />

@@ -72,7 +72,7 @@ class App extends Component {
       .post("https://you-owe-me-api.herokuapp.com/api/Debts/newDebt", newDebt)
       .then(res => {
         console.log(res);
-        window.location.href = "/";
+        window.location.href = "/allDebts";
       })
       .catch(err => {
         console.error(err);
@@ -112,7 +112,7 @@ class App extends Component {
       .then(res => {
         console.log(res.data);
         console.log(this.state.history);
-        window.location.href = "/";
+        window.location.href = "/allDebts";
       });
   };
   render() {

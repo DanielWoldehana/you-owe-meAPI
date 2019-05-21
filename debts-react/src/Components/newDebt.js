@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import "./newdebt.css";
-// import axios from "axios";
-
-// const newDebtObject = [];
 
 class newDebt extends Component {
   constructor(props) {
@@ -21,7 +18,6 @@ class newDebt extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-    // console.log(this.state.name);
   };
 
   handleSubmit = e => {
