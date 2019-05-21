@@ -117,7 +117,7 @@ class App extends Component {
         <Switch>
           <Route
             exact
-            path="/"
+            path="/allDebts"
             render={props => (
               <AllDebts
                 {...props}

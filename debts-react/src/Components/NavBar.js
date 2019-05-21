@@ -44,8 +44,8 @@ class NavBar extends Component {
           <input className="mySubmit" type="submit" value="find" />
         </form>
         <ul className={`myUl ${this.state.navShow ? "showNav" : ""}`}>
-          <Link to="/">
-            <li>HOME</li>
+          <Link to="/allDebts">
+            <li>All Debts</li>
           </Link>
           <Link to="/create">
             <li>New Debt</li>
