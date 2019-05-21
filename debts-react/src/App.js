@@ -9,7 +9,6 @@ import NewDebt from "./Components/newDebt";
 import EditDebt from "./Components/EditDebt";
 
 let url = "https://you-owe-me-api.herokuapp.com/api/Debts";
-const editToThis = "";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +22,7 @@ class App extends Component {
   componentDidMount() {
     console.log("DidMount");
     console.log(this.props);
+    console.log(this.state.allDebts);
     axios.get(url).then(res => {
       let debtsDB = res.data;
       this.setState({ allDebts: debtsDB });
@@ -65,6 +65,7 @@ class App extends Component {
       });
   };
   myEditedState = editedState => {
+    console.log("edit this state");
     console.log(this.state.updateThis);
     console.log(editedState);
     axios
@@ -86,7 +87,7 @@ class App extends Component {
   };
 
   editDebtHandler = updateThisName => {
-    // console.log("editDebt handler");
+    console.log("edit this name");
     console.log(updateThisName);
     this.setState({ updateThis: updateThisName });
   };
@@ -116,7 +117,7 @@ class App extends Component {
         <Switch>
           <Route
             exact
-            path="/"
+            path="/allDebts"
             render={props => (
               <AllDebts
                 {...props}

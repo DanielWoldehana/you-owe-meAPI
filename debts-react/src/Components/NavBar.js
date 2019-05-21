@@ -31,9 +31,7 @@ class NavBar extends Component {
     return (
       <nav>
         <Link to="/">
-          <div onClick={this.props.showAllDebts} className="myLogo">
-            Betta-Ha-Ma-Money
-          </div>
+          <div className="myLogo">Betta-Ha-Ma-Money</div>
         </Link>
         <form onSubmit={this.handleSubmit}>
           <input

@@ -18,12 +18,14 @@ class EditDebt extends Component {
   }
 
   handleChange = e => {
+    e.preventDefault();
     this.setState({ [e.target.name]: e.target.value });
     // console.log(e.target.value);
     // console.log(e.target.name);
   };
 
   handleSubmit = evt => {
+    evt.preventDefault();
     this.props.myEditedState(this.state);
   };
 
