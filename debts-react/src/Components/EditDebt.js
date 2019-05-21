@@ -24,9 +24,10 @@ class EditDebt extends Component {
     // console.log(e.target.name);
   };
 
-  handleSubmit = evt => {
+  handleSubmit = (evt, props) => {
     evt.preventDefault();
     this.props.myEditedState(this.state);
+    props.history.push("/allDebts");
   };
 
   render() {
@@ -97,7 +98,12 @@ class EditDebt extends Component {
             value={this.state.interestRate}
             onChange={this.handleChange}
           />
-          <input className="submitNewDebt" type="submit" value="Submit" />
+          <input
+            className="submitNewDebt"
+            type="submit"
+            value="Submit"
+            onClick={this.handleSubmit}
+          />
         </form>
       </div>
     );
