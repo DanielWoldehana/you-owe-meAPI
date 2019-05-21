@@ -27,7 +27,6 @@ class newDebt extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.props);
-    // this.props.setRedirect();
     this.props.addDebt(this.state);
   };
 

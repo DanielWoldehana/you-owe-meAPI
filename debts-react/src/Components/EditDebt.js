@@ -27,7 +27,6 @@ class EditDebt extends Component {
   handleSubmit = (evt, props) => {
     evt.preventDefault();
     this.props.myEditedState(this.state);
-    props.history.push("/allDebts");
   };
 
   render() {

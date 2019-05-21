@@ -79,7 +79,7 @@ class App extends Component {
         console.log(res);
         const updated = res.data;
         this.setState({ allDebts: updated });
-        this.props.history.push("/allDebts");
+        this.props.history.push("/");
       })
       .catch(err => {
         console.error(err);
@@ -117,7 +117,7 @@ class App extends Component {
         <Switch>
           <Route
             exact
-            path="/allDebts"
+            path="/"
             render={props => (
               <AllDebts
                 {...props}
