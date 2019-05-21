@@ -4,7 +4,7 @@ import { Redirect } from "react-router";
 import fire from "./config/fire";
 import axios from "axios";
 import "./App.css";
-import Login from "./components/Login";
+import Login from "./Components/Login";
 import AllDebts from "./Components/AllDebts";
 import NavBar from "./Components/NavBar";
 import NewDebt from "./Components/newDebt";
@@ -128,8 +128,9 @@ class App extends Component {
             />
           )}
         />
-        <div>
-          {this.state.user ? (
+        {/* <Login /> */}
+        {this.state.user ? (
+          <div>
             <Switch>
               <Route
                 exact
@@ -167,10 +168,10 @@ class App extends Component {
                 )}
               />
             </Switch>
-          ) : (
-            <Login />
-          )}
-        </div>
+          </div>
+        ) : (
+          <Route exact path="/" component={Login} />
+        )}
       </div>
     );
   }
